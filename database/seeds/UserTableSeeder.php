@@ -18,5 +18,12 @@ class UserTableSeeder extends Seeder
             'admin'  => 1,
             'avatar' => 'uploads/avatars/avatar.png',
         ]);
+
+         $user = App\User::create([
+            'name' => 'noor',
+            'email' => 'noor@gmail.com',
+            'password' => bcrypt('123456'),
+            'avatar' => 'uploads/avatars/avatar.png',
+        ]);
     }
 }
