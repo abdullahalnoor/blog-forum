@@ -36,7 +36,13 @@
           {{ str_limit($item->content,50) }}
         </div>
         <div class="card-footer">
-          Like
+
+          @if($item->is_liked_by_user())
+          <a href="{{route('reply.unlike',['id'=> $item->id])}}" class="btn btn-danger">Unlike</a> @else
+          <a href="{{route('reply.like',['id'=> $item->id])}}" class="btn btn-success">Like</a> @endif
+
+
+
         </div>
 
 

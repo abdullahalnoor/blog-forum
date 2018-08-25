@@ -24,6 +24,8 @@ Route::group(['middleware' => 'auth'],function(){
     Route::get('forum','ForumController@index');
     Route::post('discuss/reply','ForumController@reply')->name('discussion.reply');
 
+    Route::get('reply/like/{id}','ReplyController@like')->name('reply.like');
+    Route::get('reply/unlike/{id}','ReplyController@unlike')->name('reply.unlike');
 
 
     Route::resource('channel','ChannelController');

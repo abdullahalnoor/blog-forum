@@ -23,6 +23,7 @@ class ForumController extends Controller
             'content'   => request()->content,
             'discussion_id' => $discussion->id,
         ]);
+        return back();
     }
 
 }
