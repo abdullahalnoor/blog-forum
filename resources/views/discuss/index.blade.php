@@ -38,8 +38,13 @@
         <div class="card-footer">
 
           @if($item->is_liked_by_user())
-          <a href="{{route('reply.unlike',['id'=> $item->id])}}" class="btn btn-danger">Unlike</a> @else
-          <a href="{{route('reply.like',['id'=> $item->id])}}" class="btn btn-success">Like</a> @endif
+          <a href="{{route('reply.unlike',['id'=> $item->id])}}" class="btn btn-danger">
+            Unlike
+            <span class="badge badge-light"> {{ $item->likes->count() }} </span>
+          </a> @else
+          <a href="{{route('reply.like',['id'=> $item->id])}}" class="btn btn-success">Like
+          <span class="badge badge-light"> {{ $item->likes->count() }} </span>
+          </a> @endif
 
 
 
